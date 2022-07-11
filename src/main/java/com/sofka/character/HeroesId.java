@@ -1,12 +1,17 @@
 package com.sofka.character;
 
-public enum HeroId {
-    HULK("1009351"), THOR("1009664"), IRONMAN("1009368"), SPIDERMAN("1011054"), CAPTAIN_AMERICA(
-            "1009220");
+public enum HeroesId {
+    HULK("1009351", Hulk.class), THOR("1009664", Thor.class), IRONMAN("1009368",
+                                                                      IronMan.class), SPIDERMAN(
+            "1011054", Spiderman.class), CAPTAIN_AMERICA("1009220", CaptainAmerica.class);
 
-    final String id;
+    public final String id;
 
-    HeroId(String s) {
+    public final Class<? extends Hero> heroClass;
+
+    HeroesId(String s, Class<? extends Hero> heroClass) {
         this.id = s;
+
+        this.heroClass = heroClass;
     }
 }
